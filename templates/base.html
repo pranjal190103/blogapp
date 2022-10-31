@@ -1,0 +1,72 @@
+<html lang='en'>
+    <head>
+      {% comment %} <script src="https://use.fontawesome.com/3edb865176.js"></script> {% endcomment %}
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta charset="UTF-8">
+        <title>{% block title%} {% endblock %}</title>
+           <!-- Compiled and minified CSS -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+     {% load static %}
+     <link rel="stylesheet" href= "{% static 'css/style.css' %}">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <link rel="stylesheet" href="{%static 'css/owl.carousel.min.css' %}">
+<link rel="stylesheet" href="{%static 'css/owl.theme.default.min.css' %">
+     <!-- Compiled and minified JavaScript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+           
+     </head>
+    <body>
+      {% include 'header.html' %}
+
+        {% block content %}
+        {% comment %} {% load social_share %}
+      {% post_to_facebook object_or_url "<p style='color: green;'>facebook</p>" %} {% endcomment %}
+      
+
+        {% endblock %}
+        {% comment %} {% include 'footer.html' %} {% endcomment %}
+
+        <script>
+
+            M.AutoInit();
+
+        </script>
+        
+            <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+            <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+            <script>
+                $(document).ready(function(){
+                    $(".owl-carousel").owlCarousel({
+
+                      loop:true,
+                      margin:10,
+                      autoplay:true,
+
+                      nav:false,
+                      responsiveClass:true,
+                      responsive:{
+                        0:{
+                            items:1,
+                            nav:true
+                        },
+                        600:{
+                            items:3,
+                            nav:false
+                        },
+                        1000:{
+                            items:3,
+                            nav:false,
+                            loop:false
+                        }
+
+                      }
+
+
+                    });
+                  });
+            </script>
+
+
+
+    </body>
+    </html>

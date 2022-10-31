@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {% load static %}
+    <link rel="stylesheet" href= "{% static 'css/login.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Website</title>
+    
+    
+  </head>
+  <body>
+    <div class="headerr">
+      <span>
+        <h3><Strong class="heading">Your Blogs</strong></span>
+    </div>
+    
+        <h1 class="login"><strong> SIGN IN</strong></h1> 
+    <div class="Cardd">
+    <form method="post" class="container " >
+      {% csrf_token %}
+        <label for="">Username</label>  
+        <input type="text" id="username" name="username" placeholder=" create a username(only letters and number only)" Required>
+        <br>
+        <br>
+        <br>
+
+        <label for="">Password</label>  
+        <input type="password" id="password" name="pass1" placeholder=" enter a password" Required>
+        <a href="/reset-password" class="forget_password">Forget password?</a>
+        <br>
+        <br>
+        <br>
+        <button type="submit" class="btn" id="btn">Sign In </button>
+        <a href="/signup" class="signup_btn">create an account?</a>
+        <br>
+        
+        
+
+        
+    </form>
+  </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    
+    
+    <div class="header">
+      
+        <h6 class="copyright">copyright reserved at@2022-2023</h6>
+    </div>
+
+    
+   
+  </body>
+</html>

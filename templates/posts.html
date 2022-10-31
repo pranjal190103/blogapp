@@ -1,0 +1,102 @@
+
+{% extends 'base.html' %}
+{%block content %}
+
+<h1>{{fname}}</h1>
+<div class="container-custom">
+    <div class="row">
+    <div class="col s12 m10">
+
+
+        <h3>{{post.title}}</h3>
+
+        <p> ( {{post.cat.title}} )</p>
+        <img src="/media/{{post.image}}" class="responsive-img" alt=""></img>
+
+        <br>
+        <p>{{post.content|safe}}</p>
+ 
+        
+
+        <h2 class="subtitle" >Comments</h2>
+
+{% for comment in post.comments.all %}
+
+ <article class="media" >
+    <div class="media-content">
+        <div class="card">
+        <p>
+            <strong>{{comment.name}}</strong><br>
+            <strong>{{comment.date_added}}</strong><br>
+            
+            {{comment.body}}
+        </p>
+
+  </article>
+{% empty %}
+<div class="notification">
+    <p>No Comments Yet</p>
+</div>
+
+{% endfor %}
+
+<h2 class='subtitle 'style="margin-left:1rem"> <strong>Add Comment</strong></h2>
+
+<form method="post" action ="{{request.build_absolute_uri}}" class="card ml-10" style="background-color:#F5F5F5;">
+     {% csrf_token %}
+
+     {{ form.as_p }}
+
+     <div class="field">
+        <div class="control">
+            <button class="btn  button is-success submitcomment">Submit</button>
+        </div>
+     
+    </div>
+
+</form>
+          
+
+        <div class="social-share">
+        <a href="https://www.facebook.com/sharer.php?u={{request.build_absolute_uri}}" class=" fa fa-facebook" title="Facebook" target="_blank " >Share </a>
+        <a href="https://api.whatsapp.com/send?text={{request.build_absolute_uri}}" data-action="share/whatsapp/share"  title="Share on whatsapp" class="fa fa-whatsapp" title="Facebook" target="_blank">Share </a>
+        <a href="https://twitter.com/share?url={{request.build_absolute_uri}}" class="fa fa-twitter" title="Twitter" target="_blank">Share </a>
+         <a href="http://pinterest.com/pin/create/button/?url={{request.build_absolute_uri}}" class="fa fa-pinterest" title="Pinterest" target="_blank">Share </a>
+        </div>
+       
+    </div> 
+    <div class="col s12 m2">
+        {%for cat in cats%}
+    
+    
+        <div class="card ">
+    
+            <div class="img-container">
+               
+                <img src="/media/{{cat.image}}" class="responsive-img" alt="">
+            </div>
+          <div class="card-content">
+            <div class="card-title">
+                <b>{{cat.title}}</b>
+                
+    
+            </div>
+            <p class="truncate">
+                {{cat.description}}
+            </p>
+            <div class="container center-align mt20">
+                <a href="/category/{{cat.url}}" class="btn bg-primary">View</a>
+              </div>
+          </div>
+          
+        </div>
+        
+        {%endfor%}
+    </div>  
+</div>
+
+</div>
+
+
+
+{%endblock%}

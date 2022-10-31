@@ -1,0 +1,69 @@
+.bg-primary{
+ background-color: #477091!important;
+}
+.mt20{
+    margin-top: 30px;
+}
+.container-custom{
+    width: 100%!important;
+    margin:auto;
+}
+
+.item{
+    margin-left: 10px;
+}
+.footerr{
+
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+.copyright{
+    margin-left:45rem;
+}
+.header>h3{
+    margin-left: 5rem;
+}
+
+.fa {
+  padding: 10px;
+  font-size: 30px;
+  width: 13rem;
+  text-align: center;
+  text-decoration: none;
+  height: 10rem;
+  }
+  
+  /* Add a hover effect if you want */
+  .fa:hover {
+    opacity: 0.7;
+  }
+  
+  /* Set a specific color for each brand */
+  
+  /* Facebook */
+  .fa-facebook {
+    margin-top: 2rem;
+    margin-left: 18rem;
+    background: #3B5998;
+    color: white;
+  }
+  
+  /* Twitter */
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+    
+  }
+  .fa-whatsapp{
+    background:  #075E54;
+    color: white;
+    
+  }
+  .fa-pinterest{
+    background:  	#E60023;
+    color: white;
+  }
+ 
+  
+  
